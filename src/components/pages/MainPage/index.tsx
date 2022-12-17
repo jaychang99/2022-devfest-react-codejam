@@ -1,8 +1,23 @@
+import { AppScreen } from '@stackflow/plugin-basic-ui';
 import { ActivityComponentType } from '@stackflow/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { MainPageAppBarLeft } from 'src/components/common/Stackflow';
+import { ProductInterface } from 'src/schemas/Product';
+import { getProductList } from 'src/services/product';
 
 const MainPage: ActivityComponentType = () => {
-  return <div></div>;
+  const [products, setProducts] = useState<ProductInterface[]>([]);
+
+  const loadProducts = async () => {
+    const { data } = await getProductList();
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    loadProducts();
+  }, []);
+
+  return <AppScreen appBar={{ appendLeft: MainPageAppBarLeft }}>테스트</AppScreen>;
 };
 
 export default MainPage;
