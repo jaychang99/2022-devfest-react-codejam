@@ -1,6 +1,7 @@
 import { AppScreen } from '@stackflow/plugin-basic-ui';
 import { ActivityComponentType } from '@stackflow/react';
 import React, { useEffect, useState } from 'react';
+import Footer from 'src/components/common/Footer';
 import {
   MainPageAppBarLeft,
   MainPageAppBarRight,
@@ -28,6 +29,7 @@ const MainPage: ActivityComponentType = () => {
       }}
     >
       테스트
+      <Footer />
     </AppScreen>
   );
 };
