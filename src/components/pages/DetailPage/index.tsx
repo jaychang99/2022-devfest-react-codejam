@@ -42,7 +42,13 @@ const DetailPage: React.FC<DetailParams> = ({ params: { id } }) => {
         },
       }}
     >
-      <ProductImageWrapper></ProductImageWrapper>
+      {product && user && (
+        <section>
+          <ProductImageWrapper>
+            <img src={product.img} alt="product" />
+          </ProductImageWrapper>
+        </section>
+      )}
     </AppScreen>
   );
 };
