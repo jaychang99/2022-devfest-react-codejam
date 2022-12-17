@@ -1,6 +1,7 @@
 import { AppScreen } from '@stackflow/plugin-basic-ui';
 import React from 'react';
 import { DetailPageBackButton } from 'src/components/common/Stackflow';
+import { useFlow } from 'src/utils/stackflow';
 import styled from 'styled-components';
 
 type DetailParams = {
@@ -10,15 +11,14 @@ type DetailParams = {
 };
 
 const DetailPage: React.FC<DetailParams> = ({ params: { id } }) => {
+  // stackflow
+  const { pop } = useFlow();
+
   return (
     <AppScreen
       appBar={{
         backButton: {
-          render: () => (
-            <DetailPageBackButton
-              onClick={() => console.log('back button clicked')}
-            />
-          ),
+          render: () => <DetailPageBackButton onClick={pop} />,
         },
       }}
     >
