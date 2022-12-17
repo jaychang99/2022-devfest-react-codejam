@@ -8,6 +8,7 @@ import { ProductInterface } from '../../../schemas/Product';
 import { getUserData } from 'src/services/user';
 import { getProductData } from 'src/services/product';
 import UserProfile from 'src/components/pages/DetailPage/components/UserProfile';
+import ProductDetail from 'src/components/pages/DetailPage/components/ProductDetail';
 
 type DetailParams = {
   params: {
@@ -49,6 +50,7 @@ const DetailPage: React.FC<DetailParams> = ({ params: { id } }) => {
             <img src={product.img} alt="product" />
           </ProductImageWrapper>
           <UserProfile {...user} />
+          <ProductDetail {...product} />
         </section>
       )}
     </AppScreen>
