@@ -9,6 +9,7 @@ import { getUserData } from 'src/services/user';
 import { getProductData } from 'src/services/product';
 import UserProfile from 'src/components/pages/DetailPage/components/UserProfile';
 import ProductDetail from 'src/components/pages/DetailPage/components/ProductDetail';
+import OtherItems from 'src/components/pages/DetailPage/components/OtherItems';
 
 type DetailParams = {
   params: {
@@ -51,6 +52,7 @@ const DetailPage: React.FC<DetailParams> = ({ params: { id } }) => {
           </ProductImageWrapper>
           <UserProfile {...user} />
           <ProductDetail {...product} />
+          <OtherItems userName={user.userName} other={user.other} />
         </section>
       )}
     </AppScreen>
