@@ -1,7 +1,10 @@
 import { AppScreen } from '@stackflow/plugin-basic-ui';
 import { ActivityComponentType } from '@stackflow/react';
 import React, { useEffect, useState } from 'react';
-import { MainPageAppBarLeft } from 'src/components/common/Stackflow';
+import {
+  MainPageAppBarLeft,
+  MainPageAppBarRight,
+} from 'src/components/common/Stackflow';
 import { ProductInterface } from 'src/schemas/Product';
 import { getProductList } from 'src/services/product';
 
@@ -17,7 +20,16 @@ const MainPage: ActivityComponentType = () => {
     loadProducts();
   }, []);
 
-  return <AppScreen appBar={{ appendLeft: MainPageAppBarLeft }}>테스트</AppScreen>;
+  return (
+    <AppScreen
+      appBar={{
+        appendLeft: MainPageAppBarLeft,
+        appendRight: MainPageAppBarRight,
+      }}
+    >
+      테스트
+    </AppScreen>
+  );
 };
 
 export default MainPage;
