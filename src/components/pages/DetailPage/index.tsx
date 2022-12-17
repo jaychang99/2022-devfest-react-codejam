@@ -48,7 +48,7 @@ const DetailPage: React.FC<DetailParams> = ({ params: { id } }) => {
       {product && user && (
         <section>
           <ProductImageWrapper>
-            <img src={product.img} alt="product" />
+            <img src={product.img} alt="product" width="100%" />
           </ProductImageWrapper>
           <UserProfile {...user} />
           <ProductDetail {...product} />
